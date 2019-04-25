@@ -1,0 +1,43 @@
+.Form {
+  background: #3ad886;
+  width: 350px;
+  position: absolute;
+  left: 55vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  padding: 30px 10px;
+}
+
+.Form > img {
+  height: 200px;
+  /* min-width: 320px; */
+  margin: 30px 30px;
+}
+
+.Form > p {
+  width: 90%;
+  font-family: "Open Sans";
+  font-size: 20px;
+}
+
+.Form > input {
+  width: 90%;
+  margin: 10px 0;
+}
+
+.ButtonsContainer {
+  width: 90%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ButtonsContainer > button {
+  background: #ed6b5a;
+  font-family: "Open Sans";
+  padding: 1vh 2vw;
+  border-radius: 3px;
+}

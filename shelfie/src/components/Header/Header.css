@@ -1,0 +1,23 @@
+.Header {
+  background: #ab2a19;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 75px;
+  /* justify-content:center; */
+}
+
+.Logo {
+  height: 50px;
+  width: 50px;
+  margin: 0 25px 0 0;
+}
+
+.Header > h1 {
+  font-family: "Open Sans";
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./Header.css";
+import shelfieLogo from "../../assets/shelfie_icon.png";
 
 class Header extends Component {
   constructor(props) {
@@ -6,7 +8,12 @@ class Header extends Component {
     this.state = {};
   }
   render() {
-    return <div>Header</div>;
+    return (
+      <div className="Header">
+        <img src={shelfieLogo} className="Logo" />
+        <h1 className="">Shelfie</h1>
+      </div>
+    );
   }
 }
 
