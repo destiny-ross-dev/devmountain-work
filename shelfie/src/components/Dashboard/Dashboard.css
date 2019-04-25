@@ -1,0 +1,25 @@
+.Dashboard {
+  width: 60%;
+  padding: 5vh 2.5vw;
+  display: relative;
+}
+
+.ErrorMessage {
+  position: absolute;
+  top: 35%;
+  left: 9%;
+  height: 50%;
+  background: #ed6b5a;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.ErrorMessage img {
+  height: 200px;
+  width: 200px;
+}
