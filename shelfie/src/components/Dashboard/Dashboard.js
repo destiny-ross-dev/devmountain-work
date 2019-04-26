@@ -10,12 +10,15 @@ class Dashboard extends Component {
   }
   render() {
     let products = this.props.productList.map((product, index) => {
+      console.log(product);
       return (
         <Product
+          handleEdit={this.props.handleEdit}
           key={index}
           name={product.name}
           url={product.img}
           price={product.price}
+          productid={product.id}
         />
       );
     });
@@ -27,7 +30,6 @@ class Dashboard extends Component {
 
         {err && (
           <div className="ErrorMessage">
-            {" "}
             <h2>{err}</h2>
             <img src={logo} />
           </div>

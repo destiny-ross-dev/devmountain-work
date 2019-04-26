@@ -1,10 +1,10 @@
 .FormContainer {
   height: calc(100vh - 100px);
-  z-index: -1;
   padding: 100px 0 0 0;
 }
 
 .Form {
+  z-index: 30;
   background: #3ad886;
   height: 100%;
   width: 350px;
@@ -31,6 +31,10 @@
 .Form > input {
   width: 90%;
   margin: 10px 0;
+  height: 20px;
+  padding: 5px 5px;
+  border-radius: 3px;
+  border: none;
 }
 
 .ButtonsContainer {

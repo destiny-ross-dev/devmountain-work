@@ -4,13 +4,29 @@ import axios from "axios";
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = { productImage: "", price: "", product: "" };
+    this.state = {
+      productImage: "",
+      price: "",
+      product: "",
+      productid: 0,
+      editingExistingItem: false
+    };
   }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+  handleUpdateSave = () => {
+    console.log("in axios call:", this.state);
+    axios.put(`/api/product/${this.state.productid}`);
+  };
   onCancelClick = e => {
-    this.setState({ productImage: "", price: "", product: "" });
+    this.setState({
+      productImage: "",
+      price: "",
+      product: "",
+      productid: "",
+      editingExistingItem: false
+    });
   };
   onAddToInventoryClick = e => {
     let { product, productImage, price } = this.state;
@@ -23,8 +39,19 @@ class Form extends Component {
     }
   };
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    prevProps.editItem.name !== this.props.editItem.name &&
+      this.setState({
+        productImage: this.props.editItem.url,
+        product: this.props.editItem.name,
+        price: parseInt(this.props.editItem.price),
+        productid: this.props.editItem.productid,
+        editingExistingItem: true
+      });
+  }
   render() {
-    console.log(this.state);
+    let { productImage, price, product } = this.state;
+
     return (
       <div className="FormContainer">
         <div className="Form">
@@ -40,7 +67,7 @@ class Form extends Component {
             onChange={this.handleChange}
             name="productImage"
             type="text"
-            value={this.state.productImage}
+            value={productImage}
             placeholder="Link to img"
           />
           <p>Product Name:</p>
@@ -48,7 +75,7 @@ class Form extends Component {
             onChange={this.handleChange}
             name="product"
             type="text"
-            value={this.state.product}
+            value={product}
             placeholder="Super cool sticker"
           />
           <p>Price:</p>
@@ -56,14 +83,20 @@ class Form extends Component {
             onChange={this.handleChange}
             name="price"
             type="number"
-            value={this.state.price}
+            value={price}
             placeholder="25.43"
           />
           <div className="ButtonsContainer">
             <button onClick={() => this.onCancelClick()}>Cancel</button>
-            <button onClick={() => this.onAddToInventoryClick()}>
-              Add to Inventory
-            </button>
+            {this.state.editingExistingItem ? (
+              <button onClick={() => this.handleUpdateSave()}>
+                Save Changes
+              </button>
+            ) : (
+              <button onClick={() => this.onAddToInventoryClick()}>
+                Add to Inventory
+              </button>
+            )}
           </div>
         </div>
       </div>

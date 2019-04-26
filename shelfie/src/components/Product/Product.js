@@ -6,13 +6,21 @@ class Product extends Component {
     this.state = {};
   }
   render() {
-    let { name, price, url } = this.props;
+    let { name, price, url, productid } = this.props;
+    let editItem = { name, price, url, productid };
+    console.log("looking for id", editItem);
     return (
       <div className="Product">
         <img src={url} />
         <div className="Description">
           <h3>{name}</h3>
-          <p>{price}</p>
+          <p>${price}</p>
+          <div className="EditDeleteButtons">
+            <button onClick={() => this.props.handleEdit(editItem)}>
+              Edit
+            </button>
+            <button>Delete</button>
+          </div>
         </div>
       </div>
     );

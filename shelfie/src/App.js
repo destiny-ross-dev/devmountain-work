@@ -30,7 +30,8 @@ class App extends Component {
           productName: "Sheltie puppy",
           price: "300.50"
         }
-      ]
+      ],
+      editItem: {}
     };
   }
 
@@ -43,13 +44,17 @@ class App extends Component {
       .get("/api/inventory")
       .then(response => this.setState({ inventoryList: response.data }));
   };
+  handleEdit = editItem => {
+    this.setState({ editItem });
+  };
   render() {
     let { inventoryList, productList } = this.state;
-    console.log(this.state.inventoryList);
+
     return (
       <div className="App">
         <Header />
         <Dashboard
+          handleEdit={this.handleEdit}
           err={
             inventoryList.length < 1
               ? "Problem loading content. Refresh the page."
@@ -62,7 +67,7 @@ class App extends Component {
           }
         />
 
-        <Form getInventory={this.getInventory} />
+        <Form getInventory={this.getInventory} editItem={this.state.editItem} />
       </div>
     );
   }
