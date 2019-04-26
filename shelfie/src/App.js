@@ -35,10 +35,14 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getInventory();
+  }
+
+  getInventory = () => {
     axios
       .get("/api/inventory")
       .then(response => this.setState({ inventoryList: response.data }));
-  }
+  };
   render() {
     let { inventoryList, productList } = this.state;
     console.log(this.state.inventoryList);
@@ -58,7 +62,7 @@ class App extends Component {
           }
         />
 
-        <Form />
+        <Form getInventory={this.getInventory} />
       </div>
     );
   }

@@ -1,11 +1,19 @@
+.FormContainer {
+  height: calc(100vh - 100px);
+  z-index: -1;
+  padding: 100px 0 0 0;
+}
+
 .Form {
   background: #3ad886;
+  height: 100%;
   width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: start;
   padding: 30px 10px;
+  position: fixed;
 }
 
 .Form > img {
@@ -27,10 +35,10 @@
 
 .ButtonsContainer {
   width: 90%;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 20px 0 0 0;
 }
 
 .ButtonsContainer > button {
@@ -38,4 +46,5 @@
   font-family: "Open Sans";
   padding: 1vh 2vw;
   border-radius: 3px;
+  color: white;
 }

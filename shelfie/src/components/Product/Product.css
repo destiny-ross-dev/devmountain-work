@@ -12,6 +12,7 @@
 
 .Product img {
   height: auto;
+  max-height: 98%;
   width: 300px;
 }
 

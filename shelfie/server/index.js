@@ -18,5 +18,6 @@ app.use(json());
 app.use(cors());
 
 app.get(`/api/inventory`, c.getInventory);
+app.post(`/api/product`, c.postProduct);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
