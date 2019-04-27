@@ -1,37 +1,37 @@
 .FormContainer {
-  height: calc(100vh - 100px);
-  padding: 100px 0 0 0;
+  height: calc(100vh);
+  padding: 80px 0 0 0;
+  width: 30%;
 }
 
 .Form {
   z-index: 30;
   background: #3ad886;
   height: 100%;
-  width: 350px;
+  width: 9;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: start;
   padding: 30px 10px;
-  position: fixed;
 }
 
 .Form > img {
   height: 200px;
-  /* min-width: 320px; */
-  margin: 30px 30px;
+  margin: 15px 30px;
 }
 
 .Form > p {
   width: 90%;
   font-family: "Open Sans";
   font-size: 20px;
+  margin: none;
 }
 
 .Form > input {
   width: 90%;
-  margin: 10px 0;
-  height: 20px;
+  /* margin: 5px 0; */
+  /* height: 20px; */
   padding: 5px 5px;
   border-radius: 3px;
   border: none;
