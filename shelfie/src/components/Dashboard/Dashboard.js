@@ -13,6 +13,7 @@ class Dashboard extends Component {
       console.log(product);
       return (
         <Product
+          handleDelete={this.props.handleDelete}
           handleEdit={this.props.handleEdit}
           key={index}
           name={product.name}

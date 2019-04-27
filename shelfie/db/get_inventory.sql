@@ -1,1 +1,1 @@
-select id, name, price, img from shelfie_products;
+SELECT id, name, price, img FROM shelfie_products ORDER BY id ASC;

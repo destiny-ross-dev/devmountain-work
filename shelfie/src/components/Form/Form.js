@@ -16,8 +16,10 @@ class Form extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   handleUpdateSave = () => {
-    console.log("in axios call:", this.state);
-    axios.put(`/api/product/${this.state.productid}`);
+    let { productid, product, price, productImage } = this.state;
+    axios
+      .put(`/api/product/${productid}`, { product, price, productImage })
+      .then(response => this.props.getInventory());
   };
   onCancelClick = e => {
     this.setState({

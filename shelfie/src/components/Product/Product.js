@@ -19,7 +19,9 @@ class Product extends Component {
             <button onClick={() => this.props.handleEdit(editItem)}>
               Edit
             </button>
-            <button>Delete</button>
+            <button onClick={() => this.props.handleDelete(productid)}>
+              Delete
+            </button>
           </div>
         </div>
       </div>

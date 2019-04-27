@@ -47,6 +47,11 @@ class App extends Component {
   handleEdit = editItem => {
     this.setState({ editItem });
   };
+  handleDelete = productid => {
+    axios
+      .delete(`/api/delete/${productid}`)
+      .then(response => this.setState({ inventoryList: response.data }));
+  };
   render() {
     let { inventoryList, productList } = this.state;
 
@@ -55,6 +60,7 @@ class App extends Component {
         <Header />
         <Dashboard
           handleEdit={this.handleEdit}
+          handleDelete={this.handleDelete}
           err={
             inventoryList.length < 1
               ? "Problem loading content. Refresh the page."

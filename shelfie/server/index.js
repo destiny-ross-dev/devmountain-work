@@ -19,5 +19,7 @@ app.use(cors());
 
 app.get(`/api/inventory`, c.getInventory);
 app.post(`/api/product`, c.postProduct);
+app.put(`/api/product/:productid`, c.updateProduct);
+app.delete(`/api/delete/:productid`, c.deleteProduct);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
