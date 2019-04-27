@@ -1,0 +1,13 @@
+.Header {
+  background: #519872;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Logo {
+  margin: 0 25px 0 0;
+}
+.WebsiteName {
+  color: white;
+}

@@ -1,0 +1,25 @@
+.Dashboard {
+  height: calc(100vh - 60px);
+  padding: 0 10px;
+}
+.Dashboard__Heading {
+  margin: 0 auto;
+  width: 95%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Dashboard__Heading h2 {
+  font-size: 40px;
+  font-family: "Open Sans";
+  margin: 20px;
+}
+.Dashboard__Heading button {
+  background: #8aea92;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px;
+}
