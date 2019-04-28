@@ -17,4 +17,8 @@ massive(process.env.CONNECTION_STRING)
 app.use(json());
 app.use(cors());
 
+app.get("/api/houses", c.getListings);
+app.post("/api/house", c.createListing);
+app.delete("/api/house/:id", c.deleteListing);
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

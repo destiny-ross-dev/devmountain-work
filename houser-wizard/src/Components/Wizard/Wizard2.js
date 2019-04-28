@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class Wizard extends Component {
+class Wizard2 extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    return <div>Wizard</div>;
+    return <div>Wiz 2</div>;
   }
 }
 
-export default Wizard;
+export default Wizard2;
