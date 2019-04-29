@@ -14,17 +14,19 @@ const getListings = async (req, res) => {
 
 // Creates a new listing
 const createListing = async (req, res) => {
-  // console.log("postingProduct");
   const db = req.app.get("db");
-  let { name, address, city, state, zipcode } = req.body;
-
+  let { name, address, city, stateName, zip, mortgage, rent, img } = req.body;
+  console.log("creating listing:", req.body);
   try {
     let houseListings = await db.create_listing(
       name,
       address,
       city,
-      state,
-      zipcode
+      stateName,
+      zip,
+      mortgage,
+      rent,
+      img
     );
     res.status(200).send(houseListings);
   } catch (err) {

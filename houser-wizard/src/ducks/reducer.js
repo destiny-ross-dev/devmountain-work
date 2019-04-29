@@ -32,7 +32,12 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, { stateName: action.payload });
     case UPDATE_ZIP:
       return Object.assign({}, state, { zip: action.payload });
-
+    case UPDATE_IMG:
+      return Object.assign({}, state, { img: action.payload });
+    case UPDATE_MORTGAGE:
+      return Object.assign({}, state, { mortgage: action.payload });
+    case UPDATE_RENT:
+      return Object.assign({}, state, { rent: action.payload });
     default:
       return state;
   }
@@ -68,5 +73,22 @@ export function updateZip(zip) {
     payload: zip
   };
 }
-
+export function updateImg(img) {
+  return {
+    type: UPDATE_IMG,
+    payload: img
+  };
+}
+export function updateMortgage(mortgage) {
+  return {
+    type: UPDATE_MORTGAGE,
+    payload: mortgage
+  };
+}
+export function updateRent(rent) {
+  return {
+    type: UPDATE_RENT,
+    payload: rent
+  };
+}
 export default reducer;

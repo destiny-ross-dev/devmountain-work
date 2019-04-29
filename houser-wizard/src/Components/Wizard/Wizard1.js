@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import {
+  updateName,
+  updateAddress,
+  updateCity,
+  updateState,
+  updateZip
+} from "../../ducks/reducer";
 
 class Wizard1 extends Component {
   constructor(props) {
@@ -15,7 +23,7 @@ class Wizard1 extends Component {
             <p>Property Name</p>
             <input
               name="name"
-              onChange={this.handleChange}
+              onChange={e => this.props.updateName(e.target.value)}
               type="text"
               value={this.state.name}
               placeholder="My Great Apartment Complex"
@@ -25,7 +33,7 @@ class Wizard1 extends Component {
             <p>Address</p>
             <input
               name="address"
-              onChange={this.handleChange}
+              onChange={e => this.props.updateAddress(e.target.value)}
               type="text"
               value={this.state.address}
               placeholder="123 Real St"
@@ -35,7 +43,7 @@ class Wizard1 extends Component {
             <p>City</p>
             <input
               name="city"
-              onChange={this.handleChange}
+              onChange={e => this.props.updateCity(e.target.value)}
               type="text"
               value={this.state.city}
               placeholder="Akron"
@@ -45,7 +53,7 @@ class Wizard1 extends Component {
             <p>State</p>
             <input
               name="state"
-              onChange={this.handleChange}
+              onChange={e => this.props.updateState(e.target.value)}
               type="text"
               value={this.state.state}
               placeholder="OH"
@@ -55,7 +63,7 @@ class Wizard1 extends Component {
             <p>Zipcode</p>
             <input
               name="zipcode"
-              onChange={this.handleChange}
+              onChange={e => this.props.updateZip(e.target.value)}
               type="number"
               value={this.state.zipcode}
               placeholder="44312"
@@ -73,4 +81,19 @@ class Wizard1 extends Component {
   }
 }
 
-export default withRouter(Wizard1);
+function mapStateToProps(state) {
+  return {
+    name: state.name,
+    address: state.address,
+    city: state.city,
+    stateName: state.stateName,
+    zip: state.zip
+  };
+}
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { updateName, updateAddress, updateCity, updateState, updateZip }
+  )(Wizard1)
+);

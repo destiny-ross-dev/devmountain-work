@@ -14,14 +14,32 @@ class House extends Component {
   };
   render() {
     console.log(this.props);
-    let { name, address, city, state, zipcode, id } = this.props;
+    let {
+      name,
+      address,
+      city,
+      state,
+      zipcode,
+      img,
+      rent,
+      mortage,
+      id,
+      preview
+    } = this.props;
     return (
       <div className="House">
-        <button onClick={this.handleRemove}>Remove Property</button>
-        <h3>{name}</h3>
-        <p>
-          {address} {city}, {state} {zipcode}
-        </p>
+        {preview == undefined && (
+          <button onClick={this.handleRemove}>Remove</button>
+        )}
+        <img src={img} />
+        <div className="House__BasicInfoDiv">
+          <h3>{name}</h3>
+          <p>
+            {address} {city}, {state} {zipcode}
+          </p>
+          <p>Mortage: {mortage}</p>
+          <p>Rent: {rent}</p>
+        </div>
       </div>
     );
   }
