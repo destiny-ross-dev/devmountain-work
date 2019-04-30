@@ -1,0 +1,23 @@
+// Main scss file that imports all of the partials.
+
+//  The base/ folder holds boilerplate code for the project. Reset files, typographic rules, and commonly used HTML elements exist here.
+@import "./base/reset";
+@import "./base/typography";
+
+// The abstracts/ folder gathers all Sass tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here. ***This folder does not output a single line of CSS when compiled on its own.***
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+// @import "./abstracts/animations"
+
+// The layout/ folder contains everything that takes part in laying out the application. Contains stylesheets for the main parts of the site (header, footer, navigation, sidebar, forms, etc), and the grid system.
+@import "./layout/header";
+@import "./layout/footer";
+
+// The components/ folder consists of styling for smaller components. While layout/ is macro (defining the global wireframe), components/ is focused on widgets.
+@import "./components/buttons";
+
+// The pages/ folder contains page-specific styling.
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/home";
