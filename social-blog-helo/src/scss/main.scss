@@ -16,8 +16,11 @@
 
 // The components/ folder consists of styling for smaller components. While layout/ is macro (defining the global wireframe), components/ is focused on widgets.
 @import "./components/buttons";
+@import "./components/authentication";
 
 // The pages/ folder contains page-specific styling.
+@import "./pages/authentication";
+
 @import "./pages/about";
 @import "./pages/contact";
 @import "./pages/home";
