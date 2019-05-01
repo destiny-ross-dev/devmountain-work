@@ -13,6 +13,7 @@
 // The layout/ folder contains everything that takes part in laying out the application. Contains stylesheets for the main parts of the site (header, footer, navigation, sidebar, forms, etc), and the grid system.
 @import "./layout/header";
 @import "./layout/footer";
+@import "./layout/navigation";
 
 // The components/ folder consists of styling for smaller components. While layout/ is macro (defining the global wireframe), components/ is focused on widgets.
 @import "./components/buttons";

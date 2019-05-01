@@ -14,7 +14,7 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
-        {this.props.match.path !== "/" && <Nav />}
+        {this.props.location.pathname !== "/" && <Nav />}
         {routes}
         {/* <Dashboard />
         <Form />
