@@ -6,6 +6,7 @@ class Dashboard extends Component {
     this.state = {};
   }
   render() {
+    console.log(this.props);
     return <div>Dashboard</div>;
   }
 }

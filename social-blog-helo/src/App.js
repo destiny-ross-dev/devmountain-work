@@ -8,6 +8,7 @@ import Form from "./components/Form/Form";
 import Post from "./components/Post/Post";
 import { withRouter } from "react-router-dom";
 import routes from "./routes";
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
@@ -16,12 +17,18 @@ class App extends Component {
       <div className="App">
         {this.props.location.pathname !== "/" && <Nav />}
         {routes}
-        {/* <Dashboard />
-        <Form />
-        <Post /> */}
       </div>
     );
   }
 }
-
-export default withRouter(App);
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {}
+  )(App)
+);
