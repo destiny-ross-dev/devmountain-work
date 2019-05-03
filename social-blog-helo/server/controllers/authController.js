@@ -63,8 +63,15 @@ const checkForLogin = async (req, res) => {
   }
 };
 
+const logoutUser = (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("http://localhost:3000/");
+  });
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  logoutUser,
   checkForLogin
 };

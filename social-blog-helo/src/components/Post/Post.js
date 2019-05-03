@@ -6,7 +6,7 @@ class Post extends Component {
     this.state = {};
   }
   render() {
-    return <div>Post</div>;
+    return <div className="page-container page-container--post">Post</div>;
   }
 }
 

@@ -14,10 +14,12 @@
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/navigation";
+@import "./layout/page";
 
 // The components/ folder consists of styling for smaller components. While layout/ is macro (defining the global wireframe), components/ is focused on widgets.
 @import "./components/buttons";
 @import "./components/authentication";
+@import "./components/links";
 
 // The pages/ folder contains page-specific styling.
 @import "./pages/authentication";

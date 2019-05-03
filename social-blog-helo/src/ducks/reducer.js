@@ -6,6 +6,8 @@ const initialState = {
 };
 
 const LOGIN_USER = "LOGIN_USER";
+const LOGOUT_USER = "LOGOUT_USER";
+
 const GET_POSTS = "GET_POSTS";
 const UPDATE_POST = "UPDATE_POST";
 const DELETE_POST = "DELETE_POST";
@@ -16,6 +18,8 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case `${LOGIN_USER}_FULFILLED`:
       return Object.assign({}, state, { user: action.payload });
+    case `${LOGOUT_USER}_FULFILLED`:
+      return Object.assign({}, state, { user: {} });
     case `${REGISTER_USER}_FULFILLED`:
       return Object.assign({}, state, { user: action.payload });
     default:
@@ -43,5 +47,12 @@ export function loginUser(username, password) {
         return response.data;
       })
       .catch(err => console.log(err))
+  };
+}
+
+export function logoutUser() {
+  return {
+    type: LOGOUT_USER,
+    payload: axios.post(`/api/auth/logout`)
   };
 }

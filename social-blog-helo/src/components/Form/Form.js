@@ -6,7 +6,7 @@ class Form extends Component {
     this.state = {};
   }
   render() {
-    return <div>Form</div>;
+    return <div className="page-container page-container--form">Form</div>;
   }
 }
 

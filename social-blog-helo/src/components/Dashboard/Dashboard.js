@@ -7,7 +7,9 @@ class Dashboard extends Component {
   }
   render() {
     console.log(this.props);
-    return <div>Dashboard</div>;
+    return (
+      <div className="page-container page-container--dashboard">Dashboard</div>
+    );
   }
 }
 
