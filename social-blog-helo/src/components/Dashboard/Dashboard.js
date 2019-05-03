@@ -8,7 +8,13 @@ class Dashboard extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className="page-container page-container--dashboard">Dashboard</div>
+      <div className="page-container page-container--dashboard dashboard">
+        <div className="dashboard__search-container">
+          <input placeholder="Search By Title" />
+          <i class="fas fa-search" />
+          <button>Reset</button>
+        </div>
+      </div>
     );
   }
 }
